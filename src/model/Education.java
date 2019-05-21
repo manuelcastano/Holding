@@ -112,9 +112,9 @@ public abstract class Education extends Service{
 	
 	/**
 	*Sets the number of students 
-	*@param studentsStratum the number of students
+	*@param students the number of students
 	*/
-	public void setStudentsStratum(int students){
+	public void setStudents(int students){
 		this.students = students;
 	}
 }

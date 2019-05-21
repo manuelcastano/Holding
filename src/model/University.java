@@ -26,7 +26,7 @@ public class University extends Education{
 	*@param students the number of students
 	*@param nationalPositionPro the position in the pro test
 	*/
-	public Education(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPositionPro){
+	public University(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPositionPro){
 		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution, registry, accreditedYears, rectorName, studentsStratum, students);
 		this.nationalPositionPro = nationalPositionPro;
 	}
@@ -41,7 +41,7 @@ public class University extends Education{
 	
 	/**
 	*Sets the national position in the pro test
-	*@param the national position in the pro test
+	*@param nationalPositionPro the national position in the pro test
 	*/
 	public void setNationalPositionPro(int nationalPositionPro){
 		this.nationalPositionPro = nationalPositionPro;

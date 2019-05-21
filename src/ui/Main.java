@@ -1,5 +1,6 @@
 package ui;
 import model.*;
+import java.util.Scanner;
 
 /**
 *@author Manuel David Castaño Saldarriaga
@@ -7,4 +8,18 @@ import model.*;
 */
 public class Main{
 	
+	private Holding theHolding;
+	private Scanner reader;
+	
+	/**
+	*Main constructor
+	*/
+	public Main(){
+		theHolding = new Holding();
+		reader = new Scanner(System.in);
+	}
+	
+	public static void main(String[] args){
+		Main m = new Main();
+	}
 }

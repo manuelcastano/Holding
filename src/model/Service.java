@@ -1,4 +1,4 @@
-package mundo;
+package model;
 
 /**
 *@author Manuel David Castaño Saldarriaga

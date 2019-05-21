@@ -10,6 +10,7 @@ public abstract class Fabrication extends Company{
 	private String sanitaryRegistration;
 	private boolean status;
 	private String modality;
+	private Date expiration;
 	
 	private ArrayList<Product> products;
 	
@@ -27,12 +28,102 @@ public abstract class Fabrication extends Company{
 	*@param sanitaryRegistration the sanitary registration
 	*@param status the status of the invima
 	*@param modality the modality of the company
+	*@param expiration the expiration date
 	*/
-	public Fabrication(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String sanitaryRegistration, boolean status, String modality){
+	public Fabrication(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String sanitaryRegistration, boolean status, String modality, Date expiration){
 		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution);
 		this.sanitaryRegistration = sanitaryRegistration;
 		this.status = status;
 		this.modality = modality;
+		this.expiration = expiration;
 		products = new ArrayList<Product>();
+	}
+	
+	/**
+	*Gets the sanitary registration
+	*@return the sanitary registration
+	*/
+	public String getSanitaryRegistration(){
+		return sanitaryRegistration;
+	}
+	
+	/**
+	*Sets the sanitary registration
+	*@param sanitaryRegistration the sanitary registration
+	*/
+	public void setSanitaryRegistration(String sanitaryRegistration){
+		this.sanitaryRegistration = sanitaryRegistration;
+	}
+	
+	/**
+	*Gets the status
+	*@return the status
+	*/
+	public boolean getStatus(){
+		return status;
+	}
+	
+	/**
+	*Sets the status
+	*@param status the status
+	*/
+	public void setStatus(boolean status){
+		this.status = status;
+	}
+	
+	/**
+	*Gets the modality
+	*@return the modality
+	*/
+	public String getModality(){
+		return modality;
+	}
+	
+	/**
+	*Sets the modality
+	*@param modality the modality
+	*/
+	public void setModality(String modality){
+		this.modality = modality;
+	}
+	
+	/**
+	*Gets the expiration date
+	*@return the expiration date
+	*/
+	public Date getExpiration(){
+		return expiration;
+	}
+	
+	/**
+	*Sets the expiration date
+	*@param expiration the expiration date
+	*/
+	public void setExpiration(Date expiration){
+		this.expiration = expiration;
+	}
+	
+	/**
+	*Gets the products
+	*@return the products
+	*/
+	public ArrayList<Product> getProducts(){
+		return products;
+	}
+	
+	/**
+	*Sets the products
+	*@param products the products
+	*/
+	public void setProducts(ArrayList<Product> products){
+		this.products = products;
+	}
+	
+	/**
+	*to add a new product
+	*@param newProduct the product to add
+	*/
+	public void addProduct(Product newProduct){
+		products.add(newProduct);
 	}
 }

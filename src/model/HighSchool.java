@@ -9,7 +9,7 @@ public class HighSchool extends Education{
 	private int nationalPosition11;
 	
 	/**
-	*University constructor
+	*HighSchool constructor
 	*@param nameRegistered the name of the company
 	*@param nit the nit of the company
 	*@param address the address of the company
@@ -26,7 +26,7 @@ public class HighSchool extends Education{
 	*@param students the number of students
 	*@param nationalPosition11 the position in the saber11 test
 	*/
-	public Education(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPosition11){
+	public HighSchool(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPosition11){
 		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution, registry, accreditedYears, rectorName, studentsStratum, students);
 		this.nationalPosition11 = nationalPosition11;
 	}
@@ -41,7 +41,7 @@ public class HighSchool extends Education{
 	
 	/**
 	*Sets the national position in the saber11 test
-	*@param the national position in the saber11 test
+	*@param nationalPosition11 the national position in the saber11 test
 	*/
 	public void setNationalPosition11(int nationalPosition11){
 		this.nationalPosition11 = nationalPosition11;

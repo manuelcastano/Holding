@@ -1,4 +1,5 @@
-package mundo;
+package model;
+import java.util.ArrayList;
 
 /**
 *@author Manuel David Castaño Saldarriaga
@@ -13,7 +14,7 @@ public class Technological extends Service{
 	public static final char SOFTWARE = 'S';
 	public static final char PLATFORM = 'P';
 	
-	private ArrayList<char> services;
+	private ArrayList<Character> services;
 	
 	/**
 	*Technological constructor
@@ -29,14 +30,14 @@ public class Technological extends Service{
 	*/
 	public Technological(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution){
 		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution);
-		services = new ArrayList<char>();
+		services = new ArrayList<Character>();
 	}
 	
 	/**
 	*Gets the services
 	*@return the services
 	*/
-	public ArrayList<char> getServices(){
+	public ArrayList<Character> getServices(){
 		return services;
 	}
 	
@@ -44,7 +45,7 @@ public class Technological extends Service{
 	*Sets the services
 	*@param services the services
 	*/
-	public void setServices(ArrayList<char> services){
+	public void setServices(ArrayList<Character> services){
 		this.services = services;
 	}
 	
