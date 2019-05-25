@@ -24,10 +24,10 @@ public class HighSchool extends Education{
 	*@param rectorName the name of the rector
 	*@param studentsStratum the number of students in stratum 1 and 2	
 	*@param students the number of students
-	*@param nationalPosition11 the position in the saber11 test
+	*@param nationalPosition11 the position in the pro test
 	*/
-	public HighSchool(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPosition11){
-		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution, registry, accreditedYears, rectorName, studentsStratum, students);
+	public HighSchool(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPosition11){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, registry, accreditedYears, rectorName, studentsStratum, students);
 		this.nationalPosition11 = nationalPosition11;
 	}
 	

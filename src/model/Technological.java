@@ -24,12 +24,12 @@ public class Technological extends Service{
 	*@param contactNumber the number of the company
 	*@param employees the number of employees in the company
 	*@param value the value of the actives
-	*@param type the type of the company
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param type the type of the company
 	*/
-	public Technological(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution){
-		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution);
+	public Technological(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
 		services = new ArrayList<Character>();
 	}
 	

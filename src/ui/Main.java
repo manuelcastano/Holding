@@ -15,7 +15,6 @@ public class Main{
 	*Main constructor
 	*/
 	public Main(){
-		theHolding = new Holding();
 		reader = new Scanner(System.in);
 	}
 	

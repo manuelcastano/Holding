@@ -26,8 +26,8 @@ public class University extends Education{
 	*@param students the number of students
 	*@param nationalPositionPro the position in the pro test
 	*/
-	public University(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String type, String legalRepresentative, Date constitution, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPositionPro){
-		super(nameRegistered, nit, address, contactNumber, employees, value, type, legalRepresentative, constitution, registry, accreditedYears, rectorName, studentsStratum, students);
+	public University(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, String registry, int accreditedYears, String rectorName, int studentsStratum, int students, int nationalPositionPro){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, registry, accreditedYears, rectorName, studentsStratum, students);
 		this.nationalPositionPro = nationalPositionPro;
 	}
 	
