@@ -5,7 +5,7 @@ import java.util.ArrayList;
 *@author Manuel David Castaño Saldarriaga
 *This class contains the information for a technological company
 */
-public class Technological extends Service{
+public class Technological extends Service implements Trees{
 	
 	public static final char CONSULTANCY = 'C';
 	public static final char TRAINING = 'T';
@@ -55,5 +55,13 @@ public class Technological extends Service{
 	*/
 	public void addService(char service){
 		services.add(service);
+	}
+	
+	/**
+	*to return the trees that a company has to plant
+	*@return the quantity of trees to plant
+	*/
+	public int treesToPlant(){
+		return 0;
 	}
 }

@@ -25,4 +25,20 @@ public class Food extends Fabrication{
 		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
 		this.group = group;
 	}
+	
+	/**
+	*Gets the group
+	*@return the group
+	*/
+	public int getGroup(){
+		return group;
+	}
+	
+	/**
+	*Sets the group
+	*@param group the group
+	*/
+	public void setGroup(int group){
+		this.group = group;
+	}
 }

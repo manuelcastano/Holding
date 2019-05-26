@@ -4,7 +4,7 @@ package model;
 *@author Manuel David Castaño Saldarriaga
 *This class contains the information for a education company
 */
-public abstract class Education extends Service{
+public abstract class Education extends Service implements ProCulture{
 	
 	private String registry;
 	private int accreditedYears;
@@ -116,5 +116,12 @@ public abstract class Education extends Service{
 	*/
 	public void setStudents(int students){
 		this.students = students;
+	}
+	
+	/**
+	*to get the pro culture tax
+	*/
+	public double tax(){
+		return 0.0;
 	}
 }

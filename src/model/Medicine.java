@@ -4,7 +4,7 @@ package model;
 *@author Manuel David Castaño Saldarriaga
 *This class contains the information for medicine companys
 */
-public class Medicine extends Fabrication{
+public class Medicine extends Fabrication implements Trees{
 	
 	private String sanitaryRegistration;
 	private boolean status;
@@ -97,5 +97,13 @@ public class Medicine extends Fabrication{
 	*/
 	public void setExpiration(Date expiration){
 		this.expiration = expiration;
+	}
+	
+	/**
+	*to return the trees that a company has to plant
+	*@return the quantity of trees to plant
+	*/
+	public int treesToPlant(){
+		return 0;
 	}
 }

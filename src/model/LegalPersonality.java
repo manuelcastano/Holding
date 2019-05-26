@@ -10,6 +10,7 @@ public class LegalPersonality{
 	private double value;
 	private String legalRepresentative;
 	private Date constitution;
+	private Building[][] theTower;
 	
 	/**
 	*LegalPersonality constructor
@@ -31,6 +32,7 @@ public class LegalPersonality{
 		this.value = value;
 		this.legalRepresentative = legalRepresentative;
 		this.constitution = constitution;
+		theTower = new Building[7][20];
 	}
 	
 	/**
@@ -159,5 +161,21 @@ public class LegalPersonality{
 	*/
 	public void setConstitution(Date constitution){
 		this.constitution = constitution;
+	}
+	
+	/**
+	*Gets the tower
+	*@return the tower
+	*/
+	public Building[][] getTheTower(){
+		return theTower;
+	}
+	
+	/**
+	*Sets the tower
+	*@param theTower the tower
+	*/
+	public void setTheTower(Building[][] theTower){
+		this.theTower = theTower;
 	}
 }

@@ -6,6 +6,8 @@ package model;
 */
 public abstract class Service extends Company{
 	
+	private Poll[] polls;
+	
 	/**
 	*Service constructor
 	*@param nameRegistered the name of the company
@@ -20,5 +22,22 @@ public abstract class Service extends Company{
 	*/
 	public Service(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type){
 		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+		polls = new Poll[50];
+	}
+	
+	/**
+	*Gets the polls
+	*@return the polls
+	*/
+	public Poll[] getPolls(){
+		return polls;
+	}
+	
+	/**
+	*Sets the polls
+	*@param polls the polls
+	*/
+	public void setPolls(Poll[] polls){
+		this.polls = polls;
 	}
 }
