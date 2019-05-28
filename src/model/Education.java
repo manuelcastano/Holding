@@ -120,8 +120,17 @@ public abstract class Education extends Service implements ProCulture{
 	
 	/**
 	*to get the pro culture tax
+	@return the money to pay
 	*/
-	public double tax(){
-		return 0.0;
+	public String tax(){
+		double percentage = 20 - studentsStratum;
+		String msg = "";
+		if(percentage < 0){
+			msg = "The company don't need to pay the tax";
+		}
+		else{
+			msg = "The proculture percentage is "+(percentage*100);
+		}
+		return msg;
 	}
 }

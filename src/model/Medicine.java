@@ -19,9 +19,9 @@ public class Medicine extends Fabrication implements Trees{
 	*@param contactNumber the number of the company
 	*@param employees the number of employees in the company
 	*@param value the value of the actives
-	*@param type the type of the company
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param type the type of the company
 	*@param sanitaryRegistration the sanitary registration
 	*@param status the status of the invima
 	*@param modality the modality of the company
@@ -100,10 +100,25 @@ public class Medicine extends Fabrication implements Trees{
 	}
 	
 	/**
-	*to return the trees that a company has to plant
+	*to return the trees that a company has to plant<br>
+	*pre: The arraylist of products is initialized<br>
 	*@return the quantity of trees to plant
 	*/
 	public int treesToPlant(){
-		return 0;
+		double water = 0.0;
+		int trees = 0;
+		for(int i = 0; i < getProducts().size(); i++){
+			water += getProducts().get(i).getWaterQuantity();
+		}
+		if(water > 1 && water <= 140){
+			trees = 6;
+		}
+		else if(water >= 141 && water <= 800){
+			trees = 25;
+		}
+		else if(water > 800){
+			trees = 200;
+		}
+		return trees;
 	}
 }

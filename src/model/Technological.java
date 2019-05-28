@@ -14,6 +14,7 @@ public class Technological extends Service implements Trees{
 	public static final char SOFTWARE = 'S';
 	public static final char PLATFORM = 'P';
 	
+	private int energy;
 	private ArrayList<Character> services;
 	
 	/**
@@ -28,9 +29,26 @@ public class Technological extends Service implements Trees{
 	*@param constitution the constitution date of the company
 	*@param type the type of the company
 	*/
-	public Technological(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type){
+	public Technological(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, int energy){
 		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+		this.energy = energy;
 		services = new ArrayList<Character>();
+	}
+	
+	/**
+	*To get the energy
+	*@return the energy
+	*/
+	public int getEnergy(){
+		return energy;
+	}
+	
+	/**
+	*To set the energy	
+	*@param energy the energy
+	*/
+	public void setEnergy(int energy){
+		this.energy = energy;
 	}
 	
 	/**
@@ -62,6 +80,16 @@ public class Technological extends Service implements Trees{
 	*@return the quantity of trees to plant
 	*/
 	public int treesToPlant(){
-		return 0;
+		int trees = 0;
+		if(energy >= 1 && energy <= 1000){
+			trees = 8;
+		}
+		else if(energy >= 1001 && energy <= 3000){
+			trees = 35;
+		}
+		else if(energy > 3000){
+			trees = 500;
+		}
+		return trees;
 	}
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class LegalPersonality{
+public abstract class LegalPersonality{
 	
 	private String nameRegistered;
 	private String nit;

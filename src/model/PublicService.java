@@ -85,8 +85,18 @@ public class PublicService extends Service implements ProCulture{
 	
 	/**
 	*to get the pro culture tax
+	@return the money to pay
 	*/
-	public double tax(){
-		return 0.0;
+	public String tax(){
+		double percentage = (subscribers - subscribersStratum)/subscribers;
+		double percentagePro = 40 - percentage;
+		String msg = "";
+		if(percentagePro < 0){
+			msg = "The company don't need to pay the tax";
+		}
+		else{
+			msg = "The procultura percentage is "+(percentagePro*100);
+		}
+		return msg;
 	}
 }
