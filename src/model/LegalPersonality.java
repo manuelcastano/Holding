@@ -178,4 +178,43 @@ public abstract class LegalPersonality{
 	public void setTheTower(Building[][] theTower){
 		this.theTower = theTower;
 	}
+	
+	public String espiralPorColumna(String cargo){
+		String correos = "";
+		int contadorFilaArriba = 0;
+		int contadorFilaAbajo = theTower.length-1;
+		int contadorColumnaIzquierda = 0;
+		int contadorColumnaDerecha = theTower[0].length-1;
+		for(int p = 0; p < theTower.length*theTower[0].length;){
+			for(int i = contadorFilaArriba; i <= contadorFilaAbajo; i++){
+				if(theTower[i][contadorColumnaIzquierda].cargoEmpleado(cargo)){
+					correos += theTower[i][contadorColumnaIzquierda].correoEmpleado(cargo);
+				}
+				p++;
+			}
+			contadorColumnaIzquierda++;
+			for(int i = contadorColumnaIzquierda; i <= contadorColumnaDerecha; i++){
+				if(theTower[contadorFilaAbajo][i].cargoEmpleado(cargo)){
+					correos += theTower[contadorFilaAbajo][i].correoEmpleado(cargo);
+				}
+				p++;
+			}
+			contadorFilaAbajo--;
+			for(int i = contadorFilaAbajo; i >= contadorFilaArriba; i--){
+				if(theTower[i][contadorColumnaDerecha].cargoEmpleado(cargo)){
+					correos += theTower[i][contadorColumnaDerecha].correoEmpleado(cargo);
+				}
+				p++;
+			}
+			contadorColumnaDerecha--;
+			for(int i = contadorColumnaDerecha; i >= contadorColumnaIzquierda; i--){
+				if(theTower[contadorFilaArriba][i].cargoEmpleado(cargo)){
+					correos += theTower[contadorFilaArriba][i].correoEmpleado(cargo);
+				}
+				p++;
+			}
+			contadorFilaArriba++;
+		}
+		return correos;
+	}
 }

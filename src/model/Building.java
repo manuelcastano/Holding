@@ -49,4 +49,20 @@ public class Building{
 	public void setTheEmployee(Employee theEmployee){
 		this.theEmployee = theEmployee;
 	}
+	
+	public boolean cargoEmpleado(String cargo){
+		String ocupaCargo = false;
+		if(theEmployee != null && theEmployee.getPosition().equals(cargo)){
+			ocupaCargo = true;
+		}
+		return ocupaCargo;
+	}
+	
+	public String correoEmpleado(String cargo){
+		String correo = "";
+		if(theEmployee.getPosition().equals(cargo)){
+			correo = theEmployee.getMail();
+		}
+		return correo;
+	}
 }
