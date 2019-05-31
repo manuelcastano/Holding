@@ -50,19 +50,24 @@ public class Building{
 		this.theEmployee = theEmployee;
 	}
 	
-	public boolean cargoEmpleado(String cargo){
-		String ocupaCargo = false;
-		if(theEmployee != null && theEmployee.getPosition().equals(cargo)){
-			ocupaCargo = true;
+	/**
+	*to return if the employee in the cubicle is working in a position
+	*@param position the position of the employee
+	*@return a boolean indicates if the employee is occupied that position
+	*/
+	public boolean positionEmployee(String position){
+		boolean occupiesThePosition = false;
+		if(theEmployee != null && theEmployee.getPosition().equals(position)){
+			occupiesThePosition = true;
 		}
-		return ocupaCargo;
+		return occupiesThePosition;
 	}
 	
-	public String correoEmpleado(String cargo){
-		String correo = "";
-		if(theEmployee.getPosition().equals(cargo)){
-			correo = theEmployee.getMail();
-		}
-		return correo;
+	/**
+	*to return the mail of the employee<br>
+	*@return the mail
+	*/
+	public String mailEmployee(){
+		return theEmployee.getMail();
 	}
 }

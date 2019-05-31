@@ -19,9 +19,10 @@ public class Holding extends LegalPersonality{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*/
-	public Holding(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution);
+	public Holding(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows);
 		subordinates = new ArrayList<Company>();
 	}
 	

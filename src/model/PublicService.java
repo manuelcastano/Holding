@@ -23,13 +23,14 @@ public class PublicService extends Service implements ProCulture{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*@param type the type of the company
 	*@param typeService the type of the service
 	*@param subscribers the quantity of subscribers
 	*@param subscribersStratum the quantity of subscribers in stratum 1 and 2
 	*/
-	public PublicService(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, int typeService, int subscribers, int subscribersStratum){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+	public PublicService(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows, String type, int typeService, int subscribers, int subscribersStratum){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type);
 		this.typeService = typeService;
 		this.subscribers = subscribers;
 		this.subscribersStratum = subscribersStratum;

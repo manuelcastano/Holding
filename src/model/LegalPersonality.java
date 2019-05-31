@@ -22,8 +22,9 @@ public abstract class LegalPersonality{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*/
-	public LegalPersonality(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution){
+	public LegalPersonality(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows){
 		this.nameRegistered = nameRegistered;
 		this.nit = nit;
 		this.address = address;
@@ -32,7 +33,7 @@ public abstract class LegalPersonality{
 		this.value = value;
 		this.legalRepresentative = legalRepresentative;
 		this.constitution = constitution;
-		theTower = new Building[7][20];
+		theTower = new Building[rows][20];
 	}
 	
 	/**
@@ -179,42 +180,48 @@ public abstract class LegalPersonality{
 		this.theTower = theTower;
 	}
 	
-	public String espiralPorColumna(String cargo){
-		String correos = "";
-		int contadorFilaArriba = 0;
-		int contadorFilaAbajo = theTower.length-1;
-		int contadorColumnaIzquierda = 0;
-		int contadorColumnaDerecha = theTower[0].length-1;
+	/**
+	*To find all the mails of employees that are occupied a position, in spiral by column<br>
+	*pre: theTower is initialized
+	*@param position the position of the employees
+	*@return all the mails of employees that are occupied a position
+	*/
+	public String spiralColumn(String position){
+		String mails = "";
+		int rowUp = 0;
+		int rowDown = theTower.length-1;
+		int columnLeft = 0;
+		int columnRight = theTower[0].length-1;
 		for(int p = 0; p < theTower.length*theTower[0].length;){
-			for(int i = contadorFilaArriba; i <= contadorFilaAbajo; i++){
-				if(theTower[i][contadorColumnaIzquierda].cargoEmpleado(cargo)){
-					correos += theTower[i][contadorColumnaIzquierda].correoEmpleado(cargo);
+			for(int i = rowUp; i <= rowDown; i++){
+				if(theTower[i][columnLeft].positionEmployee(position)){
+					mails += theTower[i][columnLeft].mailEmployee();
 				}
 				p++;
 			}
-			contadorColumnaIzquierda++;
-			for(int i = contadorColumnaIzquierda; i <= contadorColumnaDerecha; i++){
-				if(theTower[contadorFilaAbajo][i].cargoEmpleado(cargo)){
-					correos += theTower[contadorFilaAbajo][i].correoEmpleado(cargo);
+			columnLeft++;
+			for(int i = columnLeft; i <= columnRight; i++){
+				if(theTower[rowDown][i].positionEmployee(position)){
+					mails += theTower[rowDown][i].mailEmployee();
 				}
 				p++;
 			}
-			contadorFilaAbajo--;
-			for(int i = contadorFilaAbajo; i >= contadorFilaArriba; i--){
-				if(theTower[i][contadorColumnaDerecha].cargoEmpleado(cargo)){
-					correos += theTower[i][contadorColumnaDerecha].correoEmpleado(cargo);
+			rowDown--;
+			for(int i = rowDown; i >= rowUp; i--){
+				if(theTower[i][columnRight].positionEmployee(position)){
+					mails += theTower[i][columnRight].mailEmployee();
 				}
 				p++;
 			}
-			contadorColumnaDerecha--;
-			for(int i = contadorColumnaDerecha; i >= contadorColumnaIzquierda; i--){
-				if(theTower[contadorFilaArriba][i].cargoEmpleado(cargo)){
-					correos += theTower[contadorFilaArriba][i].correoEmpleado(cargo);
+			columnRight--;
+			for(int i = columnRight; i >= columnLeft; i--){
+				if(theTower[rowUp][i].positionEmployee(position)){
+					mails += theTower[rowUp][i].mailEmployee();
 				}
 				p++;
 			}
-			contadorFilaArriba++;
+			rowUp++;
 		}
-		return correos;
+		return mails;
 	}
 }

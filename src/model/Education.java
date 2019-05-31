@@ -22,6 +22,7 @@ public abstract class Education extends Service implements ProCulture{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*@param type the type of the company
 	*@param registry the registry
 	*@param accreditedYears the number of year accredited
@@ -29,8 +30,8 @@ public abstract class Education extends Service implements ProCulture{
 	*@param studentsStratum the number of students in stratum 1 and 2	
 	*@param students the number of students
 	*/
-	public Education(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, String registry, int accreditedYears, String rectorName, int studentsStratum, int students){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+	public Education(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows, String type, String registry, int accreditedYears, String rectorName, int studentsStratum, int students){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type);
 		this.registry = registry;
 		this.accreditedYears = accreditedYears;
 		this.rectorName = rectorName;

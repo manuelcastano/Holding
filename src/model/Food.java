@@ -18,11 +18,12 @@ public class Food extends Fabrication{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*@param type the type of the company
 	*@param group the group of the food
 	*/
-	public Food(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, int group){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+	public Food(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows, String type, int group){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type);
 		this.group = group;
 	}
 	

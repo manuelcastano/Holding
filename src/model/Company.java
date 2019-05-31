@@ -18,10 +18,11 @@ public abstract class Company extends LegalPersonality{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*@param type the type of the company
 	*/
-	public Company(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution);
+	public Company(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows, String type){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows);
 		this.type = type;
 	}
 	

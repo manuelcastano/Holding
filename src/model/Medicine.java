@@ -21,14 +21,15 @@ public class Medicine extends Fabrication implements Trees{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
+	*@param rows the rows of the building
 	*@param type the type of the company
 	*@param sanitaryRegistration the sanitary registration
 	*@param status the status of the invima
 	*@param modality the modality of the company
 	*@param expiration the expiration date
 	*/
-	public Medicine(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, String type, String sanitaryRegistration, boolean status, String modality, Date expiration){
-		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type);
+	public Medicine(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows, String type, String sanitaryRegistration, boolean status, String modality, Date expiration){
+		super(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type);
 		this.sanitaryRegistration = sanitaryRegistration;
 		this.status = status;
 		this.modality = modality;

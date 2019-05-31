@@ -60,7 +60,10 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
-		theHolding = new Holding(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
+		theHolding = new Holding(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows);
 	}
 	
 	/**
@@ -139,6 +142,9 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Type service:");
@@ -153,7 +159,7 @@ public class Main{
 		System.out.println("Subscribers in stratum 1 and 2");
 		int subscribersStratum = reader.nextInt();
 		reader.nextLine();
-		PublicService toAdd = new PublicService(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, typeService, subscribers, subscribersStratum);
+		PublicService toAdd = new PublicService(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, typeService, subscribers, subscribersStratum);
 		theHolding.addSubordinate(toAdd);
 	}
 	
@@ -188,6 +194,9 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Registry:");
@@ -206,7 +215,7 @@ public class Main{
 		System.out.println("Position in the saberPro test:");
 		int nationalPositionPro = reader.nextInt();
 		reader.nextLine();
-		University toAdd = new University(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPositionPro);
+		University toAdd = new University(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPositionPro);
 		theHolding.addSubordinate(toAdd);
 	}
 	
@@ -241,6 +250,9 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Registry:");
@@ -259,7 +271,7 @@ public class Main{
 		System.out.println("Position in the saber11 test:");
 		int nationalPosition11 = reader.nextInt();
 		reader.nextLine();
-		HighSchool toAdd = new HighSchool(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPosition11);
+		HighSchool toAdd = new HighSchool(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPosition11);
 		theHolding.addSubordinate(toAdd);
 	}
 	
@@ -294,12 +306,15 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Kilowatts:");
 		int energy = reader.nextInt();
 		reader.nextLine();
-		Technological toAdd = new Technological(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, energy);
+		Technological toAdd = new Technological(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, energy);
 		theHolding.addSubordinate(toAdd);
 	}
 	
@@ -334,12 +349,15 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Group of the food:");
 		int group = reader.nextInt();
 		reader.nextLine();
-		Food toAdd = new Food(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, group);
+		Food toAdd = new Food(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, group);
 		theHolding.addSubordinate(toAdd);
 	}
 	
@@ -374,6 +392,9 @@ public class Main{
 		int year = reader.nextInt();
 		reader.nextLine();
 		Date constitution = new Date(day, month, year);
+		System.out.println("floors of the building");
+		int rows = reader.nextInt();
+		reader.nextLine();
 		System.out.println("Type:");
 		String type = reader.nextLine();
 		System.out.println("Sanitary registration:");
@@ -400,7 +421,7 @@ public class Main{
 		int expirationYear = reader.nextInt();
 		reader.nextLine();
 		Date expiration = new Date(expirationDay, expirationMonth, expirationYear);
-		Medicine toAdd = new Medicine(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, type, sanitaryRegistration, status, modality, expiration);
+		Medicine toAdd = new Medicine(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, sanitaryRegistration, status, modality, expiration);
 		theHolding.addSubordinate(toAdd);
 	}
 }
