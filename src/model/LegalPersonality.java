@@ -224,4 +224,64 @@ public abstract class LegalPersonality{
 		}
 		return mails;
 	}
+	
+	/**
+	*to find the extension of a employee with his name<br>
+	*pre: theTower must be initialized
+	*@param name the name of the employee
+	*@return the extension of the employee
+	*/
+	public String travelInL(String name){
+		String msg = "";
+		boolean finded = false;
+		for(int i = 0; !finded && i < theTower.length; i++){
+			if(theTower[i][0].nameEmployee().equals(name)){
+				msg = theTower[i][0].getExtension();
+				finded = true;
+			}
+		}
+		for(int i = 1; !finded && i < theTower[0].length; i++){
+				if(theTower[0][i].nameEmployee().equals(name)){
+				    msg = theTower[0][i].getExtension();
+				    finded = true;
+			    }
+			}
+		return msg;
+	}
+	
+	/**
+	*to find the extension of a employee with his name<br>
+	*pre: theTower must be initialized
+	*@param name the name of the employee
+	*@return the extension of the employee
+	*/
+	public String travelInZ(String name){
+		String msg = "";
+		boolean finded = false;
+		for(int i = 0; !finded && i < theTower[0].length; i++){
+			if(theTower[0][i].nameEmployee().equals(name)){
+				msg = theTower[0][i].getExtension();
+				finded = true;
+			}
+		}
+		for(int i = 0; !finded && i < theTower[0].length; i++){
+			if(theTower[theTower.length-1][i].nameEmployee().equals(name)){
+				msg = theTower[theTower.length-1][i].getExtension();
+				finded = true;
+			}
+		}
+		for(int i = 0; !finded && i < theTower.length;){
+			for(int j = theTower[0].length-1; !finded;){
+				if(theTower[i][j].nameEmployee().equals(name)){
+				    msg = theTower[i][j].getExtension();
+				    finded = true;
+			    }
+				if(!finded){
+				    j--;
+					i++;
+				}
+			}
+		}
+		return msg;
+	}
 }

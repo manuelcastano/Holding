@@ -65,9 +65,22 @@ public class Building{
 	
 	/**
 	*to return the mail of the employee<br>
+	*pre: the employee must be not null
 	*@return the mail
 	*/
 	public String mailEmployee(){
 		return theEmployee.getMail();
+	}
+	
+	/**
+	*to return the name of the employee
+	*@return the name of the employee
+	*/
+	public String nameEmployee(){
+		String msg = "";
+		if(theEmployee != null){
+			msg += theEmployee.getName();
+		}
+		return msg;
 	}
 }
