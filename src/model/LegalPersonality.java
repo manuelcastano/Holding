@@ -226,7 +226,7 @@ public abstract class LegalPersonality{
 	}
 	
 	/**
-	*to find the extension of a employee with his name<br>
+	*to find the extension of a employee with his name in L<br>
 	*pre: theTower must be initialized
 	*@param name the name of the employee
 	*@return the extension of the employee
@@ -250,7 +250,7 @@ public abstract class LegalPersonality{
 	}
 	
 	/**
-	*to find the extension of a employee with his name<br>
+	*to find the extension of a employee with his name in Z<br>
 	*pre: theTower must be initialized
 	*@param name the name of the employee
 	*@return the extension of the employee
@@ -271,7 +271,7 @@ public abstract class LegalPersonality{
 			}
 		}
 		for(int i = 0; !finded && i < theTower.length;){
-			for(int j = theTower[0].length-1; !finded;){
+			for(int j = theTower[0].length-1; !finded && j >= 0;){
 				if(theTower[i][j].nameEmployee().equals(name)){
 				    msg = theTower[i][j].getExtension();
 				    finded = true;
@@ -279,6 +279,118 @@ public abstract class LegalPersonality{
 				if(!finded){
 				    j--;
 					i++;
+				}
+			}
+		}
+		return msg;
+	}
+	
+	/**
+	*to find the extension of a employee with his name in X<br>
+	*pre: theTower must be initialized
+	*@param name the name of the employee
+	*@return the extension of the employee
+	*/
+	public String travelInX(String name){
+		String msg = "";
+		boolean finded = false;
+		for(int i = 0; !finded && i < theTower.length; i++){
+			for(int j = 0; !finded && j < theTower[0].length; j++){
+				if(i == j && theTower[i][j].nameEmployee().equals(name)){
+					msg = theTower[i][j].getExtension();
+					finded = true;
+				}
+			}
+		}
+		for(int i = 0; !finded && i < theTower.length;){
+			for(int j = theTower[0].length-1; !finded && j >= 0;){
+				if(theTower[i][j].nameEmployee().equals(name)){
+				    msg = theTower[i][j].getExtension();
+				    finded = true;
+			    }
+				if(!finded){
+				    j--;
+					i++;
+				}
+			}
+		}
+		return msg;
+	}
+	
+	/**
+	*to find the extension of a employee with his name in O<br>
+	*pre: theTower must be initialized
+	*@param name the name of the employee
+	*@return the extension of the employee
+	*/
+	public String travelInO(String name){
+		String msg = "";
+		boolean finded = false;
+		int rowDown = theTower.length-1;
+		int columnLeft = 0;
+		int columnRight = theTower[0].length-1;
+		for(int i = 0; !finded && i <= rowDown; i++){
+			if(theTower[i][columnLeft].nameEmployee().equals(name)){
+				msg = theTower[i][columnLeft].getExtension();
+				finded = true;
+			}
+		}
+		columnLeft++;
+		for(int i = columnLeft; !finded && i <= columnRight; i++){
+			if(theTower[rowDown][i].nameEmployee().equals(name)){
+				msg = theTower[rowDown][i].getExtension();
+				finded = true;
+			}
+		}
+		rowDown--;
+		for(int i = rowDown; !finded && i >= 0; i--){
+			if(theTower[i][columnRight].nameEmployee().equals(name)){
+				msg = theTower[i][columnRight].getExtension();
+				finded = true;
+			}
+		}
+		columnRight--;
+		for(int i = columnRight; !finded && i >= columnLeft; i--){
+			if(theTower[0][i].nameEmployee().equals(name)){
+				msg = theTower[0][i].getExtension();
+				finded = true;
+			}
+		}
+		return msg;
+	}
+	
+	/**
+	*to find the extension of a employee with his name in spiral by row<br>
+	*pre: theTower must be initialized
+	*@param name the name of the employee
+	*@return the extension of the employee
+	*/
+	public String spiralRow(String name){
+		String msg = "";
+		if(theTower.length % 2 == 0){
+			msg = "This tour can not be done because the number of floors is even ";
+		}
+		else{
+			boolean finded = false;
+			boolean last = false;
+			for(int i = 0; !finded && i < theTower.length; i++){
+				if(!last){
+					for(int j = 0; !finded && j < theTower[0].length; j++){
+						if(theTower[i][j].nameEmployee().equals(name)){
+							msg = theTower[i][j].getExtension();
+							finded = true;
+						}
+					}
+					last = true;
+				}
+				else{
+					for(int j = theTower[0].length-1; !finded && j >= 0; j--){
+						if(theTower[i][j].nameEmployee().equals(name)){
+							msg = theTower[i][j].getExtension();
+							finded = true;
+						}
+					}
+					last = false;
 				}
 			}
 		}
