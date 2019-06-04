@@ -122,4 +122,23 @@ public class Medicine extends Fabrication implements Trees{
 		}
 		return trees;
 	}
+	
+	/**
+	*to return the information of the company
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The sanitary registration is "+sanitaryRegistration+"\n";
+		if(status){
+			msg += "The status of the invima is valid\n";
+		}
+		else{
+			msg += "The status of the invima is defeated\n";
+		}
+		msg += "The modality is "+modality+"\n";
+		msg += "The constitution date is "+expiration.getDay()+"/"+expiration.getMonth()+"/"+expiration.getYear()+"\n";
+		msg += "The quantity of trees that the company needs to plant is "+treesToPlant()+"\n";		
+		return msg;
+	}
 }

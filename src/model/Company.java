@@ -41,4 +41,14 @@ public abstract class Company extends LegalPersonality{
 	public void setType(String type){
 		this.type = type;
 	}
+	
+	/**
+	*to return the information of the company
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The type of the company is "+type+"\n";
+		return msg;
+	}
 }

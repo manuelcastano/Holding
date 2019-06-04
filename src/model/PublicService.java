@@ -100,4 +100,17 @@ public class PublicService extends Service implements ProCulture{
 		}
 		return msg;
 	}
+	
+	/**
+	*to return the information of the company
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The type of the service is "+typeService+"\n";
+		msg += "The quantity of subscribers is "+subscribers+"\n";
+		msg += "The quantity of subscribers in stratum 1 and 2 is "+subscribersStratum+"\n";
+		msg += tax()+"\n";
+		return msg;
+	}
 }

@@ -34,6 +34,7 @@ public abstract class LegalPersonality{
 		this.legalRepresentative = legalRepresentative;
 		this.constitution = constitution;
 		theTower = new Building[rows][20];
+		setTheExtensions();
 	}
 	
 	/**
@@ -195,28 +196,28 @@ public abstract class LegalPersonality{
 		for(int p = 0; p < theTower.length*theTower[0].length;){
 			for(int i = rowUp; i <= rowDown; i++){
 				if(theTower[i][columnLeft].positionEmployee(position)){
-					mails += theTower[i][columnLeft].mailEmployee();
+					mails += theTower[i][columnLeft].mailEmployee()+"\n";
 				}
 				p++;
 			}
 			columnLeft++;
 			for(int i = columnLeft; i <= columnRight; i++){
 				if(theTower[rowDown][i].positionEmployee(position)){
-					mails += theTower[rowDown][i].mailEmployee();
+					mails += theTower[rowDown][i].mailEmployee()+"\n";
 				}
 				p++;
 			}
 			rowDown--;
 			for(int i = rowDown; i >= rowUp; i--){
 				if(theTower[i][columnRight].positionEmployee(position)){
-					mails += theTower[i][columnRight].mailEmployee();
+					mails += theTower[i][columnRight].mailEmployee()+"\n";
 				}
 				p++;
 			}
 			columnRight--;
 			for(int i = columnRight; i >= columnLeft; i--){
 				if(theTower[rowUp][i].positionEmployee(position)){
-					mails += theTower[rowUp][i].mailEmployee();
+					mails += theTower[rowUp][i].mailEmployee()+"\n";
 				}
 				p++;
 			}
@@ -232,7 +233,7 @@ public abstract class LegalPersonality{
 	*@return the extension of the employee
 	*/
 	public String travelInL(String name){
-		String msg = "";
+		String msg = "The employee doesn't exist";
 		boolean finded = false;
 		for(int i = 0; !finded && i < theTower.length; i++){
 			if(theTower[i][0].nameEmployee().equals(name)){
@@ -256,7 +257,7 @@ public abstract class LegalPersonality{
 	*@return the extension of the employee
 	*/
 	public String travelInZ(String name){
-		String msg = "";
+		String msg = "The employee doesn't exist";
 		boolean finded = false;
 		for(int i = 0; !finded && i < theTower[0].length; i++){
 			if(theTower[0][i].nameEmployee().equals(name)){
@@ -292,7 +293,7 @@ public abstract class LegalPersonality{
 	*@return the extension of the employee
 	*/
 	public String travelInX(String name){
-		String msg = "";
+		String msg = "The employee doesn't exist";
 		boolean finded = false;
 		for(int i = 0; !finded && i < theTower.length; i++){
 			for(int j = 0; !finded && j < theTower[0].length; j++){
@@ -324,7 +325,7 @@ public abstract class LegalPersonality{
 	*@return the extension of the employee
 	*/
 	public String travelInO(String name){
-		String msg = "";
+		String msg = "The employee doesn't exist";
 		boolean finded = false;
 		int rowDown = theTower.length-1;
 		int columnLeft = 0;
@@ -365,12 +366,13 @@ public abstract class LegalPersonality{
 	*@param name the name of the employee
 	*@return the extension of the employee
 	*/
-	public String spiralRow(String name){
+	public String travelInSpiralRow(String name){
 		String msg = "";
 		if(theTower.length % 2 == 0){
 			msg = "This tour can not be done because the number of floors is even ";
 		}
 		else{
+			msg = "The employee doesn't exist";
 			boolean finded = false;
 			boolean last = false;
 			for(int i = 0; !finded && i < theTower.length; i++){
@@ -395,5 +397,53 @@ public abstract class LegalPersonality{
 			}
 		}
 		return msg;
+	}
+	
+	/**
+	*to return the information of the company
+	*@return the information of the holding
+	*/
+	public String toString(){
+		String msg = "The name of the company is "+nameRegistered+"\n";
+		msg += "The nit of the company is "+nit+"\n";
+		msg += "The address of the company is "+address+"\n";
+		msg += "The contact number of the company is "+contactNumber+"\n";
+		msg += "The number of employees is "+employees+"\n";
+		msg += "The value of the actives is "+value+"\n";
+		msg += "The legal representative is "+legalRepresentative+"\n";
+		msg += "The constitution date is "+constitution.getDay()+"/"+constitution.getMonth()+"/"+constitution.getYear()+"\n";
+		return msg;
+	}
+	
+	/**
+	*to add a new employee to the company
+	*@param toAdd the new employee
+	*@return a message indicates if the employee could be added
+	*/
+	public String addEmployee(Employee toAdd){
+		String msg = "The employee couldn't be added";
+		boolean added = false;
+		for(int i = 0; !added && i < theTower.length; i++){
+			for(int j = 0; !added && j < theTower[0].length; j++){
+				if(theTower[i][j].getTheEmployee() == null){
+					theTower[i][j].setTheEmployee(toAdd);
+					added = true;
+					msg = "the employee were added successfuly";
+				}
+			}
+		}
+		return msg;
+	}
+	
+	/**
+	*to set the extension of each cublice with a random number<br>
+	*pre: theTower must be initialized
+	*/
+	public void setTheExtensions(){
+		for(int i = 0; i < theTower.length; i++){
+			for(int j = 0; j < theTower[0].length; j++){
+				theTower[i][j] = new Building(""+(int) ((Math.random() * 215487878) + 1), null);
+			}
+		}
 	}
 }

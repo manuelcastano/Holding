@@ -47,4 +47,14 @@ public class HighSchool extends Education{
 	public void setNationalPosition11(int nationalPosition11){
 		this.nationalPosition11 = nationalPosition11;
 	}
+	
+	/**
+	*to return the information
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The national position in the saber 11 test is "+nationalPosition11+"\n";
+		return msg;
+	}
 }

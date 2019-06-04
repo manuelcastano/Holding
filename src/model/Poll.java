@@ -68,4 +68,12 @@ public class Poll{
 	public void setCostBenefit(int costBenefit){
 		this.costBenefit = costBenefit;
 	}
+	
+	/**
+	*to return an average indicator of the level of satisfaction of their clients
+	*@return the average of the level os satisfaction
+	*/
+	public double averageIndicator(){
+		return (serviceRendered + responseTime + costBenefit)/3;
+	}
 }

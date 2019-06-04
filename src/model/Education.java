@@ -124,14 +124,30 @@ public abstract class Education extends Service implements ProCulture{
 	@return the money to pay
 	*/
 	public String tax(){
-		double percentage = 20 - studentsStratum;
+		double percentageStratum = ((double)studentsStratum/students)*100;
+		double percentage = 20 - percentageStratum;
 		String msg = "";
 		if(percentage < 0){
 			msg = "The company don't need to pay the tax";
 		}
 		else{
-			msg = "The proculture percentage is "+(percentage*100);
+			msg = "The proculture percentage is "+percentage;
 		}
+		return msg;
+	}
+	
+	/**
+	*to return the information of the company
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The registry is "+registry+"\n";
+		msg += "The number of years accredited is "+accreditedYears+"\n";
+		msg += "The name of the rector is "+rectorName+"\n";
+		msg += "The quantity of students in stratum 1 and 2 is "+studentsStratum+"\n";
+		msg += "The quantity of students is "+students+"\n";
+		msg += tax()+"\n";
 		return msg;
 	}
 }

@@ -47,4 +47,14 @@ public class University extends Education{
 	public void setNationalPositionPro(int nationalPositionPro){
 		this.nationalPositionPro = nationalPositionPro;
 	}
+	
+	/**
+	*to return the information
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The national position in the saber pro test is "+nationalPositionPro+"\n";
+		return msg;
+	}
 }

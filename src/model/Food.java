@@ -42,4 +42,14 @@ public class Food extends Fabrication{
 	public void setGroup(int group){
 		this.group = group;
 	}
+	
+	/**
+	*to return the information of the company
+	*@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The group of the food is "+group+"\n";
+		return msg;
+	}
 }

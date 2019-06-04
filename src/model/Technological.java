@@ -94,4 +94,15 @@ public class Technological extends Service implements Trees{
 		}
 		return trees;
 	}
+	
+	/**
+	*to return the information of the company
+	@return the information
+	*/
+	public String toString(){
+		String msg = super.toString();
+		msg += "The energy consumed is "+energy+"\n";
+		msg += "The quantity of trees that the company needs to plant is "+treesToPlant()+"\n";
+		return msg;
+	}
 }
