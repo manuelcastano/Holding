@@ -187,4 +187,30 @@ public class Holding extends LegalPersonality{
 		}
 		return msg;
 	}
+	
+	/**
+	*to return all the fabrication companies<br>
+	*pre: subordinates must be initialized
+	*@return the fabrication companies
+	*/
+	public String fabricationCompanies(){
+		String msg = "";
+		for(int i = 0; i < subordinates.size(); i++){
+			if(subordinates.get(i) instanceof Fabrication){
+				msg += "\n"+i+". "+subordinates.get(i).getNameRegistered();
+			}
+		}
+		return msg;
+	}
+	
+	/**
+	*to add a product
+	*pre: subordinates must be initialized
+	*@param selected the position of the company in the list
+	*@param toAdd the new product
+	*/
+	public void addProduct(int selected, Product toAdd){
+		Fabrication theCompany = (Fabrication)subordinates.get(selected);
+		theCompany.addProduct(toAdd);
+	}
 }

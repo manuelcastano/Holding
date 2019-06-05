@@ -90,6 +90,7 @@ public class Main{
 			System.out.println("9. To add a employee");
 			System.out.println("10. Find the extension of a employee");
 			System.out.println("11. Find the mails of all the employees that are occupied a position");
+			System.out.println("12. To add a product");
 			option = reader.nextInt();
 			reader.nextLine();
 			switch(option){
@@ -127,6 +128,9 @@ public class Main{
 				break;
 				case 11:
 				mailsPosition();
+				break;
+				case 12:
+				addProduct();
 				break;
 				default:
 				System.out.println("Select a correct option");
@@ -528,7 +532,7 @@ public class Main{
 	*to get all the mails of the employees that are occupied a position 
 	*/
 	public void mailsPosition(){
-		System.out.println("Of what company is the employee?");
+		System.out.println("Company:");
 		System.out.println(theHolding.companies());
 		int selected = reader.nextInt();
 		reader.nextLine();
@@ -539,6 +543,34 @@ public class Main{
 			System.out.println("Position:");
 			String position = reader.nextLine();
 			System.out.println(theHolding.mailsPosition(selected, position));
+		}
+	}
+	
+	/**
+	*To add a product
+	*/
+	public void addProduct(){
+		System.out.println("Company:");
+		System.out.println(theHolding.fabricationCompanies());
+		int selected = reader.nextInt();
+		reader.nextLine();
+		if(selected > theHolding.getSubordinates().size()-1){
+			System.out.println("Please select a correct option");
+		}
+		else{
+			System.out.println("Name:");
+			String name = reader.nextLine();
+			System.out.println("Code:");
+			String code = reader.nextLine();
+			System.out.println("Water quantity require:");
+			double waterQuantity = reader.nextDouble();
+			reader.nextLine();
+			System.out.println("Inventory:");
+			int inventory = reader.nextInt();
+			reader.nextLine();
+			Product toAdd = new Product(name, code, waterQuantity, inventory);
+			theHolding.addProduct(selected, toAdd);
+			System.out.println("The product were added successfuly");
 		}
 	}
 }
