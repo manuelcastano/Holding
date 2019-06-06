@@ -133,7 +133,7 @@ public class Holding extends LegalPersonality{
 	*@return the extension of the employee
 	*/
 	public String extensionEmployee(int position, String nameEmployee, char travel){
-		String msg = "The employee doesn't exist";
+		String msg = "";
 		if(position == -1){
 			if(travel == 'L'){
 				msg = travelInL(nameEmployee);

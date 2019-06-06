@@ -3,17 +3,17 @@ package model;
 /**
 *to manage the information for the building of a company
 */
-public class Building{
+public class Cubicle{
 	
 	private String extension;
 	private Employee theEmployee;
 	
 	/**
-	*Building constructor
+	*Cubicle constructor
 	*@param extension the extension of the cubicle
 	*@param theEmployee the employee in the cubicle
 	*/
-	public Building(String extension, Employee theEmployee){
+	public Cubicle(String extension, Employee theEmployee){
 		this.extension = extension;
 		this.theEmployee = theEmployee;
 	}

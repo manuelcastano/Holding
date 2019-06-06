@@ -48,7 +48,7 @@ public abstract class Service extends Company{
 	*/
 	public String toString(){
 		String msg = super.toString();
-		msg += "the average of the level of satisfaction is "+averageIndicator()+"\n";
+		msg += averageIndicator()+"\n";
 		return msg;
 	}
 	
@@ -80,7 +80,7 @@ public abstract class Service extends Company{
 	*to return an average indicator of the level of satisfaction of their clients
 	*@return the average of the level of satisfaction
 	*/
-	public double averageIndicator(){
+	public String averageIndicator(){
 		double average = 0.0;
 		int pollsRealized = 0;
 		for(int i = 0; i < polls.length; i++){
@@ -89,6 +89,10 @@ public abstract class Service extends Company{
 				pollsRealized++;
 			}
 		}
-		return average/pollsRealized;
+		String msg = "The polls realized don't are between 10 and 50";
+		if(pollsRealized > 10 && pollsRealized < 50){
+			msg = "the average of the level of satisfaction is "+ average/pollsRealized;
+		}
+		return msg;
 	}
 }

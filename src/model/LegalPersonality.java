@@ -10,7 +10,7 @@ public abstract class LegalPersonality{
 	private double value;
 	private String legalRepresentative;
 	private Date constitution;
-	private Building[][] theTower;
+	private Cubicle[][] theTower;
 	
 	/**
 	*LegalPersonality constructor
@@ -22,7 +22,7 @@ public abstract class LegalPersonality{
 	*@param value the value of the actives
 	*@param legalRepresentative the name of the legal representative of the company
 	*@param constitution the constitution date of the company
-	*@param rows the rows of the building
+	*@param rows the rows of the Cubicle
 	*/
 	public LegalPersonality(String nameRegistered, String nit, String address, String contactNumber, int employees, double value, String legalRepresentative, Date constitution, int rows){
 		this.nameRegistered = nameRegistered;
@@ -33,7 +33,7 @@ public abstract class LegalPersonality{
 		this.value = value;
 		this.legalRepresentative = legalRepresentative;
 		this.constitution = constitution;
-		theTower = new Building[rows][20];
+		theTower = new Cubicle[rows][20];
 		setTheExtensions();
 	}
 	
@@ -169,7 +169,7 @@ public abstract class LegalPersonality{
 	*Gets the tower
 	*@return the tower
 	*/
-	public Building[][] getTheTower(){
+	public Cubicle[][] getTheTower(){
 		return theTower;
 	}
 	
@@ -177,7 +177,7 @@ public abstract class LegalPersonality{
 	*Sets the tower
 	*@param theTower the tower
 	*/
-	public void setTheTower(Building[][] theTower){
+	public void setTheTower(Cubicle[][] theTower){
 		this.theTower = theTower;
 	}
 	
@@ -442,7 +442,7 @@ public abstract class LegalPersonality{
 	public void setTheExtensions(){
 		for(int i = 0; i < theTower.length; i++){
 			for(int j = 0; j < theTower[0].length; j++){
-				theTower[i][j] = new Building(""+(int) ((Math.random() * 215487878) + 1), null);
+				theTower[i][j] = new Cubicle(""+(int) ((Math.random() * 215487878) + 1), null);
 			}
 		}
 	}

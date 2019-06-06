@@ -24,46 +24,23 @@ public class Main{
 	*/
 	public static void main(String[] args){
 		Main m = new Main();
-		m.getInfoHolding();
+		m.init();
 		m.showMenu();
 	}
 	
 	/**
-	*to get the whole information necessary to initialize the program
+	*to initialize some objects by defect
 	*/
-	public void getInfoHolding(){
-		System.out.println("Information of the holding:");
-		System.out.println("Name:");
-		String nameRegistered = reader.nextLine();
-		System.out.println("Nit:");
-		String nit = reader.nextLine();
-		System.out.println("Address:");
-		String address = reader.nextLine();
-		System.out.println("Contact number:");
-		String contactNumber = reader.nextLine();
-		System.out.println("Number of employees:");
-		int employees = reader.nextInt();
-		reader.nextLine();
-		System.out.println("Value of the actives:");
-		double value = reader.nextDouble();
-		reader.nextLine();
-		System.out.println("Legal representative:");
-		String legalRepresentative = reader.nextLine();
-		System.out.println("Constitution date:");
-		System.out.println("Day:");
-		int day = reader.nextInt();
-		reader.nextLine();
-		System.out.println("Month:");
-		int month = reader.nextInt();
-		reader.nextLine();
-		System.out.println("Year:");
-		int year = reader.nextInt();
-		reader.nextLine();
-		Date constitution = new Date(day, month, year);
-		System.out.println("floors of the building");
-		int rows = reader.nextInt();
-		reader.nextLine();
-		theHolding = new Holding(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows);
+	public void init(){
+		Employee first = new Employee("Diego", "Gerente", "bebexitaHemoxita@gmail.com");
+		HighSchool toAdd = new HighSchool("Santiago Apostol", "4656465", "cra 33a #44-56", "3145689879", 30, 5000, "Jose", new Date(1, 3, 2001), 3, "Servicios educativos", "451616", 15, "Piedrahita", 45, 1200, 500);
+		toAdd.addEmployee(first);
+		Product pilot = new Product("jet", "A00358994", 1.5, 5000);
+		Food firstFood = new Food("Colombina", "454161", "cra 18", "454611313", 565, 60000, "Alberto", new Date(1, 8, 2015), 6, "Manufactura", 4);
+		firstFood.addProduct(pilot);
+		theHolding = new Holding("Hertz", "15545", "cra 39a #30a-55", "3147886693", 80, 500000, "Daniel", new Date(1, 2, 2015), 5);
+		theHolding.addSubordinate(toAdd);
+		theHolding.addSubordinate(firstFood);
 	}
 	
 	/**
