@@ -166,6 +166,7 @@ public class Main{
 		reader.nextLine();
 		PublicService toAdd = new PublicService(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, typeService, subscribers, subscribersStratum);
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
@@ -222,6 +223,7 @@ public class Main{
 		reader.nextLine();
 		University toAdd = new University(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPositionPro);
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
@@ -278,6 +280,7 @@ public class Main{
 		reader.nextLine();
 		HighSchool toAdd = new HighSchool(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, registry, accreditedYears, rectorName, studentsStratum, students, nationalPosition11);
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
@@ -320,7 +323,22 @@ public class Main{
 		int energy = reader.nextInt();
 		reader.nextLine();
 		Technological toAdd = new Technological(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, energy);
+		System.out.println("How many services has the company:");
+		int quantityServices = reader.nextInt();
+		reader.nextLine();
+		for(int i = 0; i < quantityServices; i++){
+			System.out.println("What service has the company:");
+			System.out.println("C. Consultancy");
+			System.out.println("T. Training");
+			System.out.println("D. Development");
+			System.out.println("I. Infrastructure");
+			System.out.println("S. Software");
+			System.out.println("P. Platform");
+			char service = reader.nextLine().charAt(0);
+			toAdd.addService(service);
+		}
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
@@ -364,6 +382,7 @@ public class Main{
 		reader.nextLine();
 		Food toAdd = new Food(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, group);
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
@@ -428,6 +447,7 @@ public class Main{
 		Date expiration = new Date(expirationDay, expirationMonth, expirationYear);
 		Medicine toAdd = new Medicine(nameRegistered, nit, address, contactNumber, employees, value, legalRepresentative, constitution, rows, type, sanitaryRegistration, status, modality, expiration);
 		theHolding.addSubordinate(toAdd);
+		System.out.println("The company were added successfuly");
 	}
 	
 	/**
